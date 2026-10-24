@@ -1,0 +1,6 @@
+@GTicket_User_API_HostAddress = http://localhost:5199
+
+GET {{GTicket_User_API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
