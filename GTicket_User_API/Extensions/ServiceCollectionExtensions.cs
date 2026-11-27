@@ -2,7 +2,6 @@
 using GTicket_User_API.Services.Implement;
 using GTicket_User_API.Services.Interface;
 using GTicket_User_API.Settings;
-using System.Security.Cryptography.Pkcs;
 
 namespace GTicket_User_API.Extensions
 {
@@ -13,8 +12,10 @@ namespace GTicket_User_API.Extensions
             services.AddSingleton<IDbConnectionFactory, DbConnectionFactory>();
             services.AddTransient<IUserServices, UserServices>();
             services.Configure<JwtSettings>(_configuration.GetSection("Jwt"));
+            services.Configure<EmailSettings>(_configuration.GetSection("EmailSettings"));
             services.AddScoped<IAuthRepository, AuthRepository>();
             services.AddScoped<ITokenService, TokenService>();
+            services.AddScoped<IEmailService, EmailService>();
 
             return services;
         }

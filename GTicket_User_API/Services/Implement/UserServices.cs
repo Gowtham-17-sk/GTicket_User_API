@@ -13,7 +13,10 @@ namespace GTicket_User_API.Services.Implement
         private readonly ILogger<UserServices> _logger;
         private readonly IDbConnectionFactory _connectionFactory;
         private readonly IAuthRepository _authRepository;
-        public UserServices(ILogger<UserServices> logger, IDbConnectionFactory connectionFactory, IAuthRepository authRepository)
+        public UserServices(
+            ILogger<UserServices> logger,
+            IDbConnectionFactory connectionFactory,
+            IAuthRepository authRepository)
         {
             _logger = logger;
             _connectionFactory = connectionFactory;
