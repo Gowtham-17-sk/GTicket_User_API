@@ -18,8 +18,7 @@ namespace GTicket_User_API.Middleware
 
 					NotFoundException => (404, ex.Message),
 					ConflictException => (409, ex.Message),
-                    BadRequestException => (400, ex.Message),
-                    _ => (500, "An unexpected error occurred.")
+					_ => (500, "An unexpected error occurred.")
 
 				};
 
